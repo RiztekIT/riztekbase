@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Routes, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
-
+declare function init_plugins();
 
 @Component({
   selector: 'app-login',
@@ -10,15 +10,17 @@ import { Routes, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
 
+    init_plugins();
+
   }
 
-  navegar(){
+  ingresar(){
     // this.router.navigateByUrl('progress');    
-    // this.router.navigate(['/dashboard']);
+    this.router.navigate(['/dashboard']);
     // this.http.post('#');
 
   }
